@@ -1,9 +1,10 @@
 import { useFrame} from '@react-three/fiber';
 import { button, folder, useControls } from 'leva';
-import React, { useMemo, useRef } from 'react'
+import React, {useEffect, useMemo, useRef} from 'react'
 import { Color, MathUtils, Vector3 } from 'three';
 import fragmentShader from './shaders/fragmentShader';
 import vertexShader from './shaders/vertexShader';
+import {isMobile} from 'react-device-detect';
 
 function Blob_02() {
 
@@ -42,6 +43,15 @@ const uniforms = useMemo(
       0.02
     );
   });
+
+    useEffect(() => {
+
+        if (isMobile) {// @ts-ignore
+            mesh.current.scale.set(1.2, 1.2, 1.2);
+            // @ts-ignore
+            mesh.current?.position.set(0,2,0);
+        }
+    }, []);
 
 
   return (

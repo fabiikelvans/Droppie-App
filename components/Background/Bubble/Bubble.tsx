@@ -8,6 +8,7 @@ import vertexShader from './shaders/vertexShader';
 import * as THREE from 'three';
 import fragmentParticlesShader from './shaders/fragmentParticles';
 import vertexParticlesShader from './shaders/vertexParticles';
+import {isMobile} from "react-device-detect";
 
 const Particles = (props : any) => {
   const { count } = props;
@@ -68,6 +69,16 @@ const Particles = (props : any) => {
     points.current.rotation.y = clock.elapsedTime / 5;
 
   });
+
+  useEffect(() => {
+
+    if (isMobile) {
+      // @ts-ignore
+      points.current.scale.set(1.4, 1.4, 1.4);
+      // @ts-ignore
+      points.current?.position.set(0,2,0);
+    }
+  }, []);
 
   return (
       // @ts-ignore
