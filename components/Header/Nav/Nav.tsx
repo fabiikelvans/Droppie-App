@@ -127,7 +127,7 @@ function Header() {
                         <Menu state={state}/>
                     </div>
 
-                    <button className="nav__toggle md:hidden block z-40 bg-transparent border-none p-0 m-0 outline-none ease-in-out duration-300 cursor-pointer" disabled={disabled} onClick={handleMenu}>
+                    <button className="nav__toggle md:hidden block z-30 bg-transparent border-none p-0 m-0 outline-none ease-in-out duration-300 cursor-pointer" disabled={disabled} onClick={handleMenu}>
                         <div className='nav__toggle-icon navBtn flex justify-center items-center cursor-pointer text-[1.2rem] h-12 w-12 transition-all rounded-full duration-300 hover:bg-white hover:text-black'>
                             {state.menuName}
                         </div>

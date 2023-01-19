@@ -62,8 +62,8 @@ function Preloader() {
 
 
     return (
-        <div ref={mainRef} className='relative'>
-            <div className="loader-wrap fixed top-0 left-0 h-[100vh] w-[100vw] z-40 block">
+        <div ref={mainRef} className='relative z-40'>
+            <div className="loader-wrap fixed top-0 left-0 h-[100vh] w-[100vw]  block">
                 <svg viewBox='0 0 1000 1000' preserveAspectRatio='none' fill='#040303'>
                     <path id='svg' d='M0, 1005S175, 995, 500, 995s500, 5, 500, 5V0H0Z'> </path>
                 </svg>

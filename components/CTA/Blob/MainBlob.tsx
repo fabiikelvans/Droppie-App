@@ -6,13 +6,15 @@ import Blob_02 from "./Blob-02";
 
 function MainBlob() {
     return (
-        <div className='absolute top-0 h-[100vh] w-[100vw] bg-cover -z-10'>
+        <div className='flex justify-center items-center'>
+            <div className='absolute top-0 h-[80vh] md:h-[100vh] w-[80vw] md:w-[100vw] bg-cover -z-10 '>
             <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
                 <Suspense fallback={null}>
                     <Blob_02/>
                 </Suspense>
                 <OrbitControls enableZoom={false} />
             </Canvas>
+        </div>
         </div>
     );
 }
