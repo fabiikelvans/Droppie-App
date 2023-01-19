@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
             gestureDirection: 'vertical', // vertical, horizontal, both
             smooth: true,
             mouseMultiplier: 1,
-            smoothTouch: true,
-            touchMultiplier: 2,
+            smoothTouch: false,
+            touchMultiplier: 1,
             infinite: false,
         })
 
