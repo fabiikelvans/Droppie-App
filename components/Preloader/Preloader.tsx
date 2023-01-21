@@ -46,30 +46,34 @@ function Preloader() {
                     attr: { d: flat },
                     ease: "power2.easeOut",
                 });
+
             t1.to('.loader-wrap', {
                 y: -1500,
-                display: 'none',
-
             })
             t1.to('.loader-wrap', {
                 zIndex: -1,
                 display: "none"
             })
+                .to('.preloader', {
+                    x: "-200%",
+                    duration: 2,
+                })
         }, mainRef); // <- scopes all selector text to the root element
 
         return () => ctx.revert();
-    }, )
-
+    }, );
 
     return (
-        <div ref={mainRef} className='fixed top-0 left-0 h-[100vh] w-[100vw]  z-40'>
-            <div className="loader-wrap  block">
-                <svg viewBox='0 0 1000 1000' preserveAspectRatio='none' fill='#040303'>
-                    <path id='svg' d='M0, 1005S175, 995, 500, 995s500, 5, 500, 5V0H0Z'> </path>
-                </svg>
-                <div className="loader-wrap-heading">
-                    <span><h1 style={header.style}>Droppie</h1></span>
-                </div>
+        <div ref={mainRef}>
+            <div  className='preloader text-white fixed top-0 left-0 w-full h-full flex items-center justify-center z-[99] ' >
+                <div className="loader-wrap absolute h-[100vh] w-full bg-transparent relative">
+                    <svg viewBox='0 0 1000 1000' preserveAspectRatio='none' fill='#040303'>
+                        <path id='svg' d='M0, 1005S175, 995, 500, 995s500, 5, 500, 5V0H0Z'> </path>
+                    </svg>
+                    <div className="loader-wrap-heading">
+                        <span><h1 style={header.style}>Droppie</h1></span>
+                    </div>
+            </div>
             </div>
         </div>
     );
